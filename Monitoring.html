@@ -131,14 +131,17 @@ if (message.length<=1) return;
 		JSON.parse(message);
 		//message=message.replace('nonce',now).replace('nonce',now);
 		websocket.send(message);
-		console.log("SENT: " + message)
+		//console.log("SENT: " + message)
+		console.log("SENT: " ,new Date().toISOString(), '\n',message);
+
 		} catch (err) {}
 }
 async function onMessage(evt) {
-	dt = new Date(evt.timeStamp + d.getTime());
+	//dt = new Date(evt.timeStamp + d.getTime());
 	obj = JSON.parse(evt.data);
 	//console.log(JSON.stringify(evt.data));
-	console.log("RECIEVED: " + evt.data);
+	//console.log("RECIEVED: " + evt.data);
+console.log("RECIEVED: " ,new Date().toISOString(), '\n',evt.data);
 
 	switch (obj.q) {
 		case 'exchange.market/placeOrder':
@@ -258,7 +261,7 @@ function OBSMessage() {
 		</script>
 <body bgcolor="#000">
 	<meta charset="utf-8" />
-	<title>Exberry Test V1.02</title>
+	<title>Exberry Test V1.03</title>
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
 
 <div id="params" class="Regular">
