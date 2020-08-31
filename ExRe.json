@@ -1,6 +1,6 @@
 {
   "[custom]-new-env-8": {
-    "url": "wss://exchange-gateway-rc.dev.exchange.exberry.io",
+    "url": "wss://exchange-gateway-uat.gw.uat.exchange.exberry.io",
     "provider": "websocket",
     "methods": [
       {
@@ -39,7 +39,7 @@
               "id": "apiKey",
               "label": "apiKey",
               "valueType": "text",
-              "initialValue": "2cbd0504-847c-4cd6-a860-00d1df1cda1f",
+              "initialValue": "04fabf64-3cec-454b-b9ab-14c737dc91ed",
               "required": true
             },
             "secret": {
@@ -47,7 +47,7 @@
               "id": "secret",
               "label": "secret",
               "valueType": "text",
-              "initialValue": "2196e8ab5d1c5dfb345560f84851736d0f4d6f9ee159344371e0d18bc8039084",
+              "initialValue": "248ea1ed25f40f7c240f9840b0f9559dd609c34987edf72bf0310c9fb83f3f74",
               "required": true
             },
             "timestamp": {
