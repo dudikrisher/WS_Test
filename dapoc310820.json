@@ -278,5 +278,55 @@
       }
     ],
     "order": 39
+  },
+  "[custom]-new-env-6": {
+    "url": "wss://exchange-backoffice-uat.uat.ops.exberry.io/api",
+    "provider": "rsocket",
+    "order": 40,
+    "methods": [
+      {
+        "group": "Instrument API",
+        "methodName": "Instrument List",
+        "asyncModel": "request/response",
+        "payload": {
+          "sample": {
+            "data": {
+              "token": "eyJhblzL4uG4Fuv7qdIUDZiNF4Crw",
+              "data": [],
+              "qualifier": "InstrumentService/list"
+            }
+          }
+        }
+      },
+      {
+        "group": "Instrument API",
+        "methodName": "New Instrument",
+        "asyncModel": "request/response",
+        "payload": {
+          "sample": {
+            "data": {
+              "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJqa3hORGN4T0RKRlF6VkNPRGd3UVRreFJUZEZNa05HT0VJMU9FRkNSall6UVRsR1JEWXhOZyJ9.eyJodHRwczovL2JhY2tvZmZpY2UvZXhjaGFuZ2VzIjpbeyJpZCI6MywibGFiZWwiOiJFeGNoYW5nZSBNYXN0ZXIifSx7ImlkIjo0LCJsYWJlbCI6IkV4Y2hhbmdlIE1hc3RlciAyIn1dLCJodHRwczovL2JhY2tvZmZpY2UvY3VycmVudEV4Y2hhbmdlSWQiOjQsImlzcyI6Imh0dHBzOi8vc3RhZ2luZy1hZG1pbi1leGNoYW5nZS1vbTIuZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVkZDI0ZDMzZDM1MTFkMGYwM2E3OGE3MSIsImF1ZCI6WyJiby1nYXRld2F5IiwiaHR0cHM6Ly9zdGFnaW5nLWFkbWluLWV4Y2hhbmdlLW9tMi5ldS5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNTkxNTI1NDc1LCJleHAiOjE1OTE2MTE4NzUsImF6cCI6IkF4S0xaQXJIVzhBT2hqTzM5MVlFQ0xLMXZFYnpObDg5Iiwic2NvcGUiOiJvcGVuaWQgSGFsdFJlc3VtZS9yZXN1bWUgSGFsdFJlc3VtZS9oYWx0QWxsIEhhbHRSZXN1bWUvcmVzdW1lQWxsIEhhbHRSZXN1bWUvaGFsdCBDYWxlbmRhci91cGRhdGUgQ2FsZW5kYXIvbGlzdCBCcm9rZXIvY3JlYXRlIEJyb2tlci91cGRhdGUgQnJva2VyL2xpc3QgSW5zdHJ1bWVudC9saXN0IEFQSUtleS9jcmVhdGUgSW5zdHJ1bWVudC91cGRhdGUgQVBJS2V5L2RlbGV0ZSBJbnN0cnVtZW50L2NyZWF0ZSBDQlIvY3JlYXRlIGVtYWlsIENCUi91cGRhdGUgcHJvZmlsZSBDQlIvbGlzdCBDYWxlbmRhci9jcmVhdGUifQ.SlSnvqj0ozv5W1pkbpuTNTsG7lAnNJP2q0fkcxOuucMYptoWKaRvYZ09AjaDZRcW-4NtXGY4rAIomMXFFR3egBTs7XNsX2Adx-TVY3j1PlNNKQZJtEaR0keRLxW0Aww8W_jIsEXuB8YoyvNZGCt299Is6cCnhhPzFcSJVHYTjKFCRsE3qhlOVzLBsYeT5qHmlhC-Yt5sx7qD-8TSTeFZZhqE65_zTX6akP4OAzaP45cRNiSKmUPpsMK8sFgIG1WgXlgg3nxiRec87mBSGqHID-sB33GO-7TFopRm1GdjZ9a4S9o7KSjKLHTpuVfhyuJ9-uiO6wW9I58twRZrlECl3w",
+              "user": {
+                "email": "dapocuser@exberry.io"
+              },
+              "data": [
+                {
+                  "symbol": "DAInstrument10",
+                  "quoteCurrency": "USD",
+                  "instrumentDescription": "instrument Test",
+                  "calendarId": "1261007448",
+                  "pricePrecision": 8,
+                  "quantityPrecision": 6,
+                  "minQuantity": 0.001,
+                  "maxQuantity": 1000000,
+                  "status": "Active"
+                }
+              ],
+              "qualifier": "InstrumentService/create"
+            }
+          }
+        }
+      }
+    ]
   }
 }
