@@ -1,6 +1,6 @@
 {
   "[custom]-new-env-5": {
-    "url": "wss://exchange-gateway-rc.dev.exchange.exberry.io",
+    "url": "wss://exchange-gateway-uat.gw.uat.exchange.exberry.io",
     "provider": "websocket",
     "methods": [
       {
