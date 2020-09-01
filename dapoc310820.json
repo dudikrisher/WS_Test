@@ -280,7 +280,7 @@
     "order": 39
   },
   "[custom]-new-env-6": {
-    "url": "wss://exchange-backoffice-uat.uat.ops.exberry.io/api",
+    "url": "wss://exchange-backoffice-uat.bo.uat.ops.exberry.io/api",
     "provider": "rsocket",
     "order": 40,
     "methods": [
