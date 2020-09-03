@@ -216,7 +216,7 @@
               "id": "userId",
               "label": "userId",
               "type": "input",
-              "initialValue": "NDEXUserTest1",
+              "initialValue": "GRGUserTest1",
               "required": true,
               "valueType": "text"
             },
