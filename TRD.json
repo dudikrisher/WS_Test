@@ -90,7 +90,7 @@
               "instrument": "NT18",
               "brokerOrderId": 1001,
               "timeInForce": "GTC",
-              "userId": "FSCUserTest1"
+              "userId": "TRDUserTest1"
             },
             "q": "exchange.market/placeOrder",
             "sid": 1
@@ -184,9 +184,9 @@
               "id": "instrument",
               "label": "instrument",
               "data": [
-                "FSC1",
-                "FSC2",
-                "FSC3"
+                "TRD1",
+                "TRD2",
+                "TRD3"
               ],
               "type": "select",
               "required": true
@@ -216,7 +216,7 @@
               "id": "userId",
               "label": "userId",
               "type": "input",
-              "initialValue": "UATUserTest1",
+              "initialValue": "TRDUserTest1",
               "required": true,
               "valueType": "text"
             },
