@@ -153,11 +153,11 @@ color: #878787;
 	 
 	   </style>
 		<script type="text/javascript">
-	var endpointArr= ["wss://exchange-gateway-master.gw.rnd.exchange.exberry.io",
-		"wss://exchange-gateway-rc.gw.rnd.exchange.exberry.io"],
-		InstrumentsArr = ["AMZ","LoadIns"]
-		apiKeyArr=["11707389-0162-4d2b-8005-9bd52e60bde9", "c86ce45d-b9a9-4eed-932e-cce526a97b19"],
-		secretArr = ["521c65cf5b6a8439669184d7a0b935e57670b3c1cd00be420661dfd75a17d7cc","1e83b8e0b652fdd579f55bcd77a7afddbc115b62ccb97b39ed9ed7adb91eb21b"]
+	var endpointArr= ["wss://exchange-gateway-master.exchange.rnd.exberry.io",
+		"wss://exchange-gateway-rc.exchange.rnd.exberry.io","wss://exchange-gateway-develop.exchange.rnd.exberry.io"],
+		InstrumentsArr = ["AMZ","LoadIns","AMZ"]
+		apiKeyArr=["11707389-0162-4d2b-8005-9bd52e60bde9", "c86ce45d-b9a9-4eed-932e-cce526a97b19","cadd3e0d-c1a0-4db9-a3d5-c7692675a1d3"],
+		secretArr = ["521c65cf5b6a8439669184d7a0b935e57670b3c1cd00be420661dfd75a17d7cc","1e83b8e0b652fdd579f55bcd77a7afddbc115b62ccb97b39ed9ed7adb91eb21b","3159c12a72b4dff068d362ad8818663407d2a42e5014be12cc871230f16e5795"]
 	
 	var output, outputDetails, outputDetailsOffline, data, lines, Message,
 		preHeader = document.createElement("p1"),
@@ -193,9 +193,27 @@ color: #878787;
 		var urlParams = new URLSearchParams(window.location.search);
 		var URLFreq = urlParams.get('freq');
 		if (URLFreq) 
-{		dynamicFrequency = URLFreq;
- document.getElementById("dynamicFrequency").innerText=dynamicFrequency;
-}		
+			{		dynamicFrequency = URLFreq;
+			 document.getElementById("dynamicFrequency").innerText=dynamicFrequency;
+			}	
+		var URLEnv = urlParams.get('env');
+		if (URLEnv) 
+			{		
+				switch (URLEnv) {
+				case "Master":
+				// document.getElementById("SelectEnv").innerText="Master";
+				 document.getElementById("SelectEnv").value="0";
+				 case "RC":
+				// document.getElementById("SelectEnv").innerText="RC";
+				 document.getElementById("SelectEnv").value="1";
+				 case "Develop":
+				 //document.getElementById("SelectEnv").innerText="Develop";
+				 {document.getElementById("SelectEnv").value="2";
+				 }
+				 OpenURL();
+				 
+				}
+				}
 		dynamicFrequency = document.getElementById("dynamicFrequency").innerText;
 		myVar= setInterval(myTimertoSend, dynamicFrequency*1000)
 	  
@@ -501,7 +519,7 @@ color: #878787;
 		</script>
 	<body bgcolor="#000">
 		<meta charset="utf-8" />
-		<title>WebSocket Test V1.08</title>
+		<title>WebSocket Test V1.10</title>
 		
 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
 		<!-- <button type="button" id="ConnectButton" onclick="ReConnect()" class="button button1">Connect</button>
@@ -511,6 +529,7 @@ color: #878787;
 		<select id="SelectEnv" type="selectBox" class="button selectBox" onChange="OpenURL()" ;>
 			<option value=0>Master</option>
 			<option value=1>RC</option>
+			<option value=2>Develop</option>
 			<option value=100>Enter Manually</option>
 		</select>
 
