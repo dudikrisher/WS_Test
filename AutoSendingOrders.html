@@ -154,7 +154,7 @@ color: #878787;
 	   </style>
 		<script type="text/javascript">
 	var endpointArr= ["wss://exchange-gateway-master.exchange.rnd.exberry.io",
-		"wss://exchange-gateway-rc.exchange.rnd.exberry.io","wss://exchange-gateway-develop.exchange.rnd.exberry.io","wss://exchange-gateway-release.exchange.rnd.exberry.io","wss://exchange-gateway-uat.gw.uat.exchange.exberry.io"],
+		"wss://exchange-gateway-rc.exchange.rnd.exberry.io","wss://exchange-gateway-develop.exchange.rnd.exberry.io","wss://exchange-gateway-release.exchange.rnd.exberry.io","wss://exchange-gateway-uat.exchange.uat.exberry.io"],
 		InstrumentsArr = ["Monitor","AMZ","AMZ","AMZ","MonitoringINS"]
 		apiKeyArr=["11707389-0162-4d2b-8005-9bd52e60bde9", "c86ce45d-b9a9-4eed-932e-cce526a97b19","cadd3e0d-c1a0-4db9-a3d5-c7692675a1d3","057640a5-0cda-42d4-ab55-f1dd12c4c585","84ea48bf-9bae-4c95-8e86-bf88186cd8b0"],
 		secretArr = ["521c65cf5b6a8439669184d7a0b935e57670b3c1cd00be420661dfd75a17d7cc","1e83b8e0b652fdd579f55bcd77a7afddbc115b62ccb97b39ed9ed7adb91eb21b","3159c12a72b4dff068d362ad8818663407d2a42e5014be12cc871230f16e5795","f32154bcb8abc16c756fa1bf45f7fe96fb237d8432b5c8adfcb2a8b9775e7984","1fd63e2d4fecc705f1beefc49b60913ea33bc493d94ab0ee7977ba2207895adf"];
@@ -412,7 +412,7 @@ color: #878787;
 		//console.log(JSON.stringify(evt.data));
 		
 		switch (obj.q) {
-			case 'exchange.market/placeOrder':
+			case 'v1/exchange.market/placeOrder':
 				try{
 				if (obj.d.errorCode)
 				{
@@ -501,7 +501,7 @@ color: #878787;
 	 function PlaceOrdersMessage() {
 	//var now = Date.now(); 
 	 PlaceORders = 
-			'{"q": "exchange.market/placeOrder","sid": "nonce","d": {"brokerOrderId":"nonce","userId": "1A","orderType": "Limit","side": "Buy","instrument":"' + CurrentInstrument + '","quantity": "random","price": "random","timeInForce": "GTC"}};' + '\n' ;
+			'{"q": "v1/exchange.market/placeOrder","sid": "nonce","d": {"brokerOrderId":"nonce","userId": "1A","orderType": "Limit","side": "Buy","instrument":"' + CurrentInstrument + '","quantity": "random","price": "random","timeInForce": "GTC"}};' + '\n' ;
 	}
 	function PlaceOrders() {
 		PlaceOrdersMessage();
@@ -514,11 +514,11 @@ color: #878787;
 		 document.getElementById("myTextarea").value = createSession;
 	}
 	 function CancelOrdersMessage() {
-		CancelOrder = '{"q":"exchange.market/cancelOrder","sid":75,"d":{"orderId":"' + OrderID + '","instrument":"' + CurrentInstrument +'"}}';
+		CancelOrder = '{"q":"v1/exchange.market/cancelOrder","sid":75,"d":{"orderId":"' + OrderID + '","instrument":"' + CurrentInstrument +'"}}';
 	 }
 	 
 	function StreamsMessage() {
-		orderEvents   = '{"q": "exchange.market/orderBookDepth","sid": 30000,"d":{}}';
+		orderEvents   = '{"q": "v1/exchange.market/orderBookDepth","sid": 30000,"d":{}}';
 	  }
 	function Streams() {
 		 StreamsMessage();
@@ -527,7 +527,7 @@ color: #878787;
 		</script>
 	<body bgcolor="#000">
 		<meta charset="utf-8" />
-		<title>WebSocket Test V1.12</title>
+		<title>WebSocket Test V1.13</title>
 		
 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
 		<!-- <button type="button" id="ConnectButton" onclick="ReConnect()" class="button button1">Connect</button>
