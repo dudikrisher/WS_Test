@@ -501,7 +501,7 @@ color: #878787;
 	 function PlaceOrdersMessage() {
 	//var now = Date.now(); 
 	 PlaceORders = 
-			'{"q": "v1/exchange.market/placeOrder","sid": "nonce","d": {"brokerOrderId":"nonce","userId": "1A","orderType": "Limit","side": "Buy","instrument":"' + CurrentInstrument + '","quantity": "random","price": "random","timeInForce": "GTC"}};' + '\n' ;
+			'{"q": "v1/exchange.market/placeOrder","sid": "nonce","d": {"mpOrderId":"nonce","userId": "1A","orderType": "Limit","side": "Buy","instrument":"' + CurrentInstrument + '","quantity": "random","price": "random","timeInForce": "GTC"}};' + '\n' ;
 	}
 	function PlaceOrders() {
 		PlaceOrdersMessage();
