@@ -211,9 +211,9 @@ function init() {
     document.getElementById("WritetoScr").addEventListener("input", function() {
         WriteResponse = document.getElementById("WritetoScr").checked;
     }, false);
-	document.getElementById("DrawEventTable").addEventListener("input", function() {
-        DrawOrderEvents = document.getElementById("DrawEventTable").checked;
-    }, false);
+	//document.getElementById("DrawEventTable").addEventListener("input", function() {
+       // DrawOrderEvents = document.getElementById("DrawEventTable").checked;
+   // }, false);
     document.getElementById("myTextareaMax").addEventListener("input", function() {
         timestosend = document.getElementById("myTextareaMax").innerText;
     }, false);
@@ -378,10 +378,10 @@ async function onMessage(evt) {
     else FileContent = FileContent + evt.timeStamp + ":" + evt.data + '\n';
     //console.log(JSON.stringify(evt.data));
     switch (obj.q) {
-        case 'exchange.market/placeOrder':
+        case 'v1/exchange.market/placeOrder':
             OrderID = obj.d.orderId;
             break;
-		case "exchange.market/orderBookState":
+		case "v1/exchange.market/orderBookState":
 				 try{ if (obj.d.lastTrackingNumber) {
 					trackingNumber = obj.d.lastTrackingNumber;
 					StreamsMessage();
@@ -395,7 +395,7 @@ async function onMessage(evt) {
 			if (DrawOrderEvents)	DrawOrderEventsFunc();
 			
             break;
-     	case "exchange.market/orderBookDepth":
+     	case "v1/exchange.market/orderBookDepth":
 			if (ManageBook) ManageBookFunc();
 			if (DrawOrderEvents)	DrawOrderEventsFunc();
             break;
@@ -450,7 +450,7 @@ window.addEventListener("load", init, false);
     var len1 = book1.length;
 	try {if (CurrentInstrument != obj.d.instrument) return } catch(err){};
 	try{
-   if (obj.d.messageType == "Add" || obj.q == "exchange.market/orderBookState") {
+   if (obj.d.messageType == "Add" || obj.q == "v1/exchange.market/orderBookState") {
         var order1 = [obj.d.price, ((obj.d.side == 'Sell') ? obj.d.quantity * -1 : obj.d.quantity), ((obj.d.side == 'Buy') ? 'Buy' : 'Sell'),obj.d.orderId]
         if (len1 == 0) book1[len1] = order1;
         else book1[len1] = order1;
