@@ -498,7 +498,14 @@ function drawBookTable() {
         colorPositive: 'green',
         drawZeroLine: true /*,showValue:false*/
     });
+	 var formatterNum = new google.visualization.NumberFormat({
+	 fractionDigits:10
+	 });
+	
+	formatterNum.format(dataTable1, 1);
+	formatterNum.format(dataTable1, 0);
     formatter.format(dataTable1, 1); // Apply formatter to second column
+
     var table = new google.visualization.Table(document.getElementById('chart_div1'));
     table.draw(dataTable1, bookOptions);
 }
