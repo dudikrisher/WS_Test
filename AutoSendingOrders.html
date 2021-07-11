@@ -197,14 +197,7 @@ color: #878787;
 			document.getElementById("dynamicFrequency").innerText=dynamicFrequency;
 			}	
 		
-		var URLInstrument = urlParams.get('instrument');
-		if (URLInstrument) 
-			{		
-			CurrentInstrument = URLInstrument;
-			document.getElementById("dynamicinstrumentid").innerText=CurrentInstrument;
-			}	
 		
-		RefreshInstrumentant();
 
 		var URLEnv = urlParams.get('env');
 		if (URLEnv) 
@@ -240,6 +233,16 @@ color: #878787;
 				 
 				}
 				}
+		
+		var URLInstrument = urlParams.get('instrument');
+		if (URLInstrument) 
+			{		
+			CurrentInstrument = URLInstrument;
+			document.getElementById("dynamicinstrumentid").innerText=CurrentInstrument;
+			}	
+		
+		RefreshInstrumentant();
+		
 		dynamicFrequency = document.getElementById("dynamicFrequency").innerText;
 		myVar= setInterval(myTimertoSend, dynamicFrequency*1000)
 	  
