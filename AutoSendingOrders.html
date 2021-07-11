@@ -163,7 +163,7 @@ color: #878787;
 		preHeader = document.createElement("p1"),
 		preNice = document.createElement("pN"),
 		CurrentInstrument = InstrumentsArr[0],
-			CurrentapiKey = apiKeyArr[0],
+		CurrentapiKey = apiKeyArr[0],
 		CurrentSecret = secretArr[0],
 		NeedtoReconnect = true,
 		WriteResponse = false,
@@ -186,16 +186,26 @@ color: #878787;
 		output = document.getElementById("output");
 		outputDetails = document.getElementById("outputDetails");
 		outputDetailsOfflinef = document.getElementById("outputDetailsOffline");
-		RefreshInstrumentant();
 	 	WriteResponse = document.getElementById("WritetoScr").checked;
 		timestosend = document.getElementById("myTextareaMax").innerText;
 		
 		var urlParams = new URLSearchParams(window.location.search);
 		var URLFreq = urlParams.get('freq');
 		if (URLFreq) 
-			{		dynamicFrequency = URLFreq;
-			 document.getElementById("dynamicFrequency").innerText=dynamicFrequency;
+			{		
+			dynamicFrequency = URLFreq;
+			document.getElementById("dynamicFrequency").innerText=dynamicFrequency;
 			}	
+		
+		var URLInstrument = urlParams.get('instrument');
+		if (URLInstrument) 
+			{		
+			CurrentInstrument = URLInstrument;
+			document.getElementById("dynamicinstrumentid").innerText=CurrentInstrument;
+			}	
+		
+		RefreshInstrumentant();
+
 		var URLEnv = urlParams.get('env');
 		if (URLEnv) 
 			{		
@@ -532,7 +542,7 @@ color: #878787;
 		</script>
 	<body bgcolor="#000">
 		<meta charset="utf-8" />
-		<title>WebSocket Test V1.13</title>
+		<title>WebSocket Test V1.14</title>
 		
 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
 		<!-- <button type="button" id="ConnectButton" onclick="ReConnect()" class="button button1">Connect</button>
